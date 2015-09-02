@@ -1,0 +1,48 @@
+apia.auth.required=false
+apia.ssl.required=false
+apim.ssl.required=false
+deploy.local.services=false
+fedora.home=<%= node['fedora']['installpath'] %>
+fedora.admin.pass=<%= node['fedora']['adminpassword'] %>
+fedora.serverContext=<%= node['fedora']['context'] %>
+fedora.serverHost=<%= node['fqdn'] %>
+fesl.authn.enabled=true
+fesl.authz.enabled=false
+install.type=custom
+keystore.file=included
+llstore.type=akubra-fs
+messaging.enabled=true
+messaging.uri=vm\:(broker\:(tcp\://localhost\:61616))
+ri.enabled=true
+servlet.engine=included
+ssl.available=false
+tomcat.home=<%= node['tomcat']['base'] %>
+tomcat.http.port=<%= node['tomcat']['port'] %>
+upstream.auth.enabled=false
+xacml.enabled=true
+database.driver=included
+database.username=<%= node['fedora']['database']['username'] %>
+database.password=<%= node['fedora']['database']['password'] %>
+
+<% if 'mysql' == node['fedora']['database']['type'] %>
+database=mysql
+database.jdbcDriverClass=com.mysql.jdbc.Driver
+database.jdbcURL=jdbc\:mysql\://<%= node['mysql']['bind_address'] %>/<%= node['fedora']['database']['name'] %>?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true
+database.mysql.driver=included
+database.mysql.jdbcDriverClass=com.mysql.jdbc.Driver
+database.mysql.jdbcURL=jdbc\:mysql\://<%= node['mysql']['bind_address'] %>/<%= node['fedora']['database']['name'] %>?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true
+
+<% elsif 'postgresql' == node['fedora']['database']['type'] %>
+database=postgresql
+database.jdbcDriverClass=org.postgresql.Driver
+database.jdbcURL=jdbc\:postgresql\://<%= node['postgresql']['config']['listen_addresses'] %>/<%= node['fedora']['database']['name'] %>?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true
+database.postgresql.driver=included
+database.postgresql.jdbcDriverClass=org.postgresql.Driver
+database.postgresql.jdbcURL=jdbc\:postgresql\://<%= node['postgresql']['config']['listen_addresses'] %>/<%= node['fedora']['database']['name'] %>?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true
+
+<% else %>
+database=included
+database.jdbcDriverClass=org.apache.derby.jdbc.EmbeddedDriver
+database.jdbcURL=jdbc\:derby\:<%= node['fedora']['installpath'] %>/derby/<%= node['fedora']['database']['name'] %>;create=true
+
+<% end %>

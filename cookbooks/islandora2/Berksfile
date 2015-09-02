@@ -1,0 +1,10 @@
+site :opscode
+
+# Use metadata to determine required cookbooks for Islandora
+metadata
+
+# Since we're using Berkshelf, ensure all the cookbooks we might need are available
+cookbook 'apt'
+cookbook 'drupal', :github => 'gondoi/drupal-cookbook'
+cookbook 'fedora', :github => 'mjsuhonos/fedora-cookbook'
+cookbook 'hipsnip-solr'

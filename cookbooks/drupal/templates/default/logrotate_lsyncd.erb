@@ -1,0 +1,12 @@
+<%= node['drupal']['system']['home'] %>/*.log {
+        weekly
+        missingok
+        rotate 52
+        compress
+        delaycompress
+        notifempty
+        sharedscripts
+        postrotate
+                /usr/local/bin/supervisorctl restart lsyncd > /dev/null
+        endscript
+}

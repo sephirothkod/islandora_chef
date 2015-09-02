@@ -1,0 +1,80 @@
+{
+  "sources": {
+    "islandora": {
+      "path": "."
+    },
+    "apt": {
+      "locked_version": "2.0.0"
+    },
+    "drupal": {
+      "locked_version": "1.3.1",
+      "git": "git://github.com/gondoi/drupal-cookbook.git",
+      "ref": "c46a34035501123671c02bd5afec001eed0fc692"
+    },
+    "fedora": {
+      "locked_version": "3.6.2",
+      "git": "git://github.com/mjsuhonos/fedora-cookbook.git",
+      "ref": "42dbf5d3242b560363b1d9f4360f759d350832e2"
+    },
+    "hipsnip-solr": {
+      "locked_version": "0.4.0"
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
+    },
+    "postfix": {
+      "locked_version": "2.1.6"
+    },
+    "php": {
+      "locked_version": "1.2.2"
+    },
+    "xml": {
+      "locked_version": "1.1.2"
+    },
+    "mysql": {
+      "locked_version": "3.0.2"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
+    },
+    "apache2": {
+      "locked_version": "1.6.6"
+    },
+    "firewall": {
+      "locked_version": "0.11.0"
+    },
+    "cron": {
+      "locked_version": "1.2.4"
+    },
+    "lsyncd": {
+      "locked_version": "0.1.0"
+    },
+    "yum": {
+      "locked_version": "2.3.0"
+    },
+    "java": {
+      "locked_version": "1.12.0"
+    },
+    "windows": {
+      "locked_version": "1.10.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "database": {
+      "locked_version": "1.4.0"
+    },
+    "postgresql": {
+      "locked_version": "3.0.2"
+    },
+    "aws": {
+      "locked_version": "0.101.2"
+    },
+    "xfs": {
+      "locked_version": "1.1.0"
+    },
+    "hipsnip-jetty": {
+      "locked_version": "0.8.0"
+    }
+  }
+}
